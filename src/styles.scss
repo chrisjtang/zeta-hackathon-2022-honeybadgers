@@ -85,3 +85,12 @@ html, body, #root, .App {
     cursor: pointer;
   }
 }
+
+.tooltip {
+  width: 33%;
+  background-color: #e6e6e6;
+  padding: 16px;
+  box-sizing: border-box;
+  border: 1px solid black;
+  border-radius: 6px;
+}

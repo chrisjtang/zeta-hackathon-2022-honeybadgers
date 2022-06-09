@@ -6,14 +6,17 @@ const stickers = [
   {
     name: 'happy',
     src: 'https://assets1.lottiefiles.com/packages/lf20_xv1gn5by.json',
+    adMessage: `<Any brand #1> Sale!`,
   },
   {
     name: 'cool',
     src: 'https://assets10.lottiefiles.com/packages/lf20_x9puwsf6.json',
+    adMessage: `<Any brand #2> Sale!`
   },
   {
     name: 'sad',
     src: 'https://assets8.lottiefiles.com/private_files/lf30_aprp5fnm.json',
+    adMessage: `<Any brand #3> Sale!`
   },
 ]
 
@@ -22,6 +25,7 @@ function App() {
   const [isOpen, setIsOpen] = useState(false)
   const [stickersToRender, setStickersToRender] = useState(stickers)
   const [comments, setComments] = useState([])
+  const [tooltip, setTooltip] = useState(null)
 
   const stickerNames = stickers.map((s) => s.name);
 
@@ -78,10 +82,12 @@ function App() {
           </div>
         </div>
         {comments && <ul className="comments">
-          {comments.map((c) => (
+          {comments.map((c, i) => (
             <li className="comment">
               <img className="avatar" src="noavatar92.png"/>
               <lottie-player
+                onMouseEnter={() => setTooltip(i + 1)}
+                onMouseLeave={() => setTooltip(null)}
                 src={c.src}
                 background="transparent"
                 speed="1"
@@ -90,6 +96,9 @@ function App() {
                 autoplay
               >
               </lottie-player>
+              {tooltip && tooltip === i + 1 &&
+                <div className="tooltip">{c.adMessage}</div>
+              }
             </li>
           ))}
         </ul>}
