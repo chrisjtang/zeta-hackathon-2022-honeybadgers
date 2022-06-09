@@ -9,7 +9,7 @@ const stickers = [
   },
   {
     name: 'cool',
-    src: 'https://assets6.lottiefiles.com/packages/lf20_nx9eoend.json',
+    src: 'https://assets10.lottiefiles.com/packages/lf20_x9puwsf6.json',
   },
   {
     name: 'sad',
