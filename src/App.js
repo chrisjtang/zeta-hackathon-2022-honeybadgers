@@ -5,18 +5,18 @@ import './styles.scss'
 const stickers = [
   {
     name: 'happy',
-    src: 'https://assets1.lottiefiles.com/packages/lf20_xv1gn5by.json',
-    adMessage: `<Any brand #1> Sale!`,
+    src: 'https://assets5.lottiefiles.com/packages/lf20_kyusfkfp.json',
+    adLink: 'https://marketplacestrategy.com/wp-content/uploads/2019/03/Amazon-Fresh-Ad.jpg',
   },
   {
     name: 'cool',
-    src: 'https://assets10.lottiefiles.com/packages/lf20_x9puwsf6.json',
-    adMessage: `<Any brand #2> Sale!`
+    src: 'https://assets7.lottiefiles.com/private_files/lf30_9cjtxpa3.json',
+    adLink: `https://www.macv.in/wp-content/uploads/2021/12/MacV-Website-Home-Banner-5.jpg`
   },
   {
     name: 'sad',
     src: 'https://assets8.lottiefiles.com/private_files/lf30_aprp5fnm.json',
-    adMessage: `<Any brand #3> Sale!`
+    adLink: `https://images-cdn.ispot.tv/ad/wgw1/default-large.jpg`,
   },
 ]
 
@@ -97,7 +97,10 @@ function App() {
               >
               </lottie-player>
               {tooltip && tooltip === i + 1 &&
-                <div className="tooltip">{c.adMessage}</div>
+                <div className="tooltip">
+                    <img src={c.adLink} alt={'an ad for your sticker'} width={350} height={175}>
+                    </img>
+                    </div>
               }
             </li>
           ))}
